@@ -1,10 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import "./cards.css"
+
 function Card({ title, imageSource, text, url }) {
   return (
     <div className="card text-center bg-dark">
-      <img src={imageSource} alt="" />
+      <img src={imageSource} alt="" className="card-img-top" />
       <div className="card-body text-light">
         <h4 className="card-title">{title}</h4>
         <p className="card-text text-secondary">

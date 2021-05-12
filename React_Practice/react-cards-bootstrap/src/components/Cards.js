@@ -11,7 +11,7 @@ const cards = [
     title: "Fast Web",
     image: image1,
     url: "https://facebook.com",
-    text: "This is Mark's website",
+    // text: "This is Mark's website",
   },
   {
     id: 2,
