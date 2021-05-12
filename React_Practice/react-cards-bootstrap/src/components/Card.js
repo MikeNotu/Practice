@@ -1,7 +1,6 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react"
 
-function Card({ title, imageSource }) {
+function Card({ title, imageSource, url }) {
   return (
     <div className="card text-center bg-dark">
       <img src={imageSource} alt="" />
@@ -16,7 +15,11 @@ function Card({ title, imageSource }) {
           cupiditat non proident, sunt in culpa qui officia deserunt mollit anim
           id est laborum.
         </p>
-        <a href="#" className="btn btn-outline-secondary rounded-0">
+        <a
+          href={url}
+          className="btn btn-outline-secondary rounded-0"
+          target="_blank"
+        >
           Go to this website
         </a>
       </div>
