@@ -30,7 +30,7 @@ function Cards() {
       <div className="row">
         {cards.map((card) => (
           <div className="col-md-4" key={card.id}>
-            <Card title={card.title} />
+            <Card title={card.title} imageSource={card.image} />
           </div>
         ))}
       </div>

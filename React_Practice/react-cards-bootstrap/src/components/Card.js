@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react"
 
-function Card(props) {
-  console.log(props)
+function Card({ title, imageSource }) {
   return (
     <div className="card text-center bg-dark">
-      <img src="" alt="" />
+      <img src={imageSource} alt="" />
       <div className="card-body text-light">
-        <h4 className="card-title">My Title</h4>
+        <h4 className="card-title">{title}</h4>
         <p className="card-text text-secondary">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod
           tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
