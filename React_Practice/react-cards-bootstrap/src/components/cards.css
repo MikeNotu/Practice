@@ -16,7 +16,11 @@
   font-size: 1rem;
 }
 
+.overflow {
+  overflow: hidden;
+}
 .card-img-top {
+  transition: all 0.2s ease-in-out;
 }
 
 .card-img-top:hover {
