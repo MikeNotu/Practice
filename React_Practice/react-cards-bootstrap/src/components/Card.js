@@ -1,11 +1,12 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react"
-import image1 from "../assets/image1.jpg"
 
-function Card() {
+function Card(props) {
+  console.log(props)
   return (
-    <div className="card">
-      <img src={image1} alt="" />
-      <div className="card-body">
+    <div className="card text-center bg-dark">
+      <img src="" alt="" />
+      <div className="card-body text-light">
         <h4 className="card-title">My Title</h4>
         <p className="card-text text-secondary">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod
@@ -16,6 +17,9 @@ function Card() {
           cupiditat non proident, sunt in culpa qui officia deserunt mollit anim
           id est laborum.
         </p>
+        <a href="#" className="btn btn-outline-secondary rounded-0">
+          Go to this website
+        </a>
       </div>
     </div>
   )
