@@ -11,6 +11,7 @@ const cards = [
     title: "Fast Web",
     image: image1,
     url: "https://facebook.com",
+    text: "This is Mark's website",
   },
   {
     id: 2,
@@ -33,7 +34,12 @@ function Cards() {
       <div className="row">
         {cards.map((card) => (
           <div className="col-md-4" key={card.id}>
-            <Card title={card.title} imageSource={card.image} url={card.url} />
+            <Card
+              title={card.title}
+              imageSource={card.image}
+              url={card.url}
+              text={card.text}
+            />
           </div>
         ))}
       </div>
