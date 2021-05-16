@@ -12,6 +12,11 @@ const datos = [{
 	year: 2019
 }];
 
+// Array vacio
+// const datos = [];
+
+
+
 // const getDatos = () => {
 // 	return datos;
 // }
@@ -25,6 +30,9 @@ const datos = [{
 
 const getDatos = () => {
 	return new Promise((resolve,reject)=>{
+		if(datos.length===0){
+			reject(new Error('No existen datos'));
+		}
 		setTimeout(()=>{
 			resolve(datos);
 		},1500);
@@ -49,7 +57,7 @@ const fetchingData = async ()=>{
 	const datosFetched = await getDatos();
 	console.log(datosFetched);
 	}catch(err){
-		console.log(err);
+		console.log(err.message);
 
 	}
 
