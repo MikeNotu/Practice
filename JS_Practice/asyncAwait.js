@@ -1,36 +1,26 @@
-const datos = [{
-	id: 1,
-	title: 'Iron Man',
-	year: 2008
-},{
-	id:2,
-	title: 'Spiderman: Homecoming',
-	year: 2017
-},{
-	id:3,
-	title:'Avengers: Endgame',
-	year: 2019
-}];
-
-// const getDatos = () => {
-// 	return datos;
-// }
-
-// Hace que tarde unos cuantos milisegundos el conseguir la info.
-// const getDatos = () =>{
-// 	setTimeout(()=>{
-// 		return datos;
-// 	},1500);
-// }
-
-const getDatos = () => {
+function makeRequest(location){
 	return new Promise((resolve,reject)=>{
-		setTimeout(()=>{
-			resolve(datos);
-		},1500);
-	});
+		console.log(`Making Request to ${location}`)
+		if (location ==='Google'){
+			resolve('Google says hi')
+		}else{
+			reject('We can only talk to Google')
+		}
+	})
 }
-// console.log(getDatos());
 
-getDatos()
-.then((datos)=>console.log(datos));
+function processRequest(response){
+	return new Promise((resolve,reject)=>{
+		console.log('Processing response')
+		resolve(`Extra Ingformation+ ${response}`)
+	})
+}
+
+makeRequest('Google').then(response=>{
+	console.log('Response Received')
+	return processRequest(response)
+}).then(processedResponse=>{
+	console.log(processedResponse)
+}).catch(err=>{
+	console.log(err)
+})
