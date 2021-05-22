@@ -1,7 +1,9 @@
+# Tener cuidado con si se usa un archivo png o jpg, puede afectar el resultado obtenido.
+
 import cv2
 import numpy as np
 
-img = cv2.imread('ruedaIMG.png')
+img = cv2.imread('Rueda.png')
 src = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 edges = cv2.Canny(src,100,200,apertureSize = 3)
@@ -13,11 +15,10 @@ src = cv2.medianBlur(src,5)
 src = cv2.GaussianBlur(src,(5,5),0)
 src = cv2.medianBlur(src,5)
 
-#circles = cv2.HoughCircles(src, cv2.HOUGH_GRADIENT, 1, 200, param1=30, param2=45 minRadius=0, maxRadius=0)
-
 circles = cv2.HoughCircles(src,cv2.HOUGH_GRADIENT, 1,200,param1=30,param2=45,minRadius=0,maxRadius=0)
 
 circles = np.uint16(np.around(circles))
+
 for i in circles[0,:]:
     
     cv2.circle(img,(i[0], i[1]),i[2], (0,0,255),2)
