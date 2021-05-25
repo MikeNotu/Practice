@@ -12,6 +12,9 @@ const companies = [
 
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
+
+// Can Drink1
+
 /*let canDrink = [];
 for(let i = 0; i < ages.length; i++){
 	if(ages[i] >= 21){
@@ -19,24 +22,38 @@ for(let i = 0; i < ages.length; i++){
 	}
 }*/
 
+// Can Drink2
 // const canDrink = ages.filter(function(age){
 // 	if(age >=21){
 // 		return true;
 // 	}
 // });
 
+// Can Drink3
 // const canDrink = ages.filter(age=> age>=21);
 
 // console.log(canDrink);
 
-
+// Retail Companies1
 // const retailCompanies = companies.filter(function(company){
 // 	if(company.category === 'Retail'){
 // 		return true;
 // 	}
 // });
 
+// Retail Companies2
+// const retailCompanies = companies.filter(CompaRetail=>CompaRetail.category==='Retail');
 
-const retailCompanies = companies.filter(CompaRetail=>CompaRetail.category==='Retail');
+// console.log(retailCompanies);
 
-console.log(retailCompanies);
+
+
+// Companies from the 80's
+// const eightiesCompanies = companies.filter(company=>(company.start >=1980 && company.start<1990));
+
+// console.log(eightiesCompanies);
+
+// Lasted 10 years
+const tenYears = companies.filter(company=>(company.end-company.start>=10));
+
+console.log(tenYears);
