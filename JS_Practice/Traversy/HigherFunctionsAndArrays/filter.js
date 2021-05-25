@@ -30,10 +30,13 @@ for(let i = 0; i < ages.length; i++){
 // console.log(canDrink);
 
 
-const retailCompanies = companies.filter(function(company){
-	if(company.category === 'Retail'){
-		return true;
-	}
-});
+// const retailCompanies = companies.filter(function(company){
+// 	if(company.category === 'Retail'){
+// 		return true;
+// 	}
+// });
+
+
+const retailCompanies = companies.filter(CompaRetail=>CompaRetail.category==='Retail');
 
 console.log(retailCompanies);
