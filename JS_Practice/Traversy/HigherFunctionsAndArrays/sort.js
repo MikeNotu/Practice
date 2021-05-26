@@ -12,34 +12,3 @@ const companies = [
 
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
-
-// Basic Example
-// const companyNames = companies.map(function(company){
-// 	return company.name;
-// });
-
-// Only 1's
-// const test = companies.map(function(company){
-// 	return 1;
-// });
-
-// Using ${} 1
-// const testMap = companies.map(function(company){
-// 	return `${company.name} [${company.start} - ${company.end}]`;
-// });
-
-// Using ${} 2
-// const testMap = companies.map(company => `${company.name} [${company.start} - ${company.end}]`);
-
-// SquareRoot
-// const agesSquare = ages.map(age=>Math.sqrt(age));
-
-// TimesTwo
-// const agesTimesTwo = ages.map(age=>age*2);
-
-// Both
-const ageMap = ages
-	.map(age=>Math.sqrt(age))
-	.map(age=>age*2);
-
-console.log(ageMap);
