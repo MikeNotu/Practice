@@ -1,4 +1,4 @@
-// javascript using another js file
+// js using another js file
 
 
 // module.js
