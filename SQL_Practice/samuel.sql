@@ -152,14 +152,132 @@ CREATE PROCEDURE spInsertTbTransaction(
     IN inName VARCHAR(50),     
     IN inDescription VARCHAR(250),   
     IN inAmount float,
-    IN inDate DATE,
     IN inTtype integer,
     IN inIdexpensetype integer,
     In inIdprofile integer
 
 ) 
 BEGIN    
-    insert into tbTransaction (name,description,amount,date,ttype,idexpensetype,idprofile) values (inName,inDescription,inAmount,inDate,inTtype,inIdexpensetype,inIdprofile);
+    insert into tbTransaction (name,description,amount,date,ttype,idexpensetype,idprofile) values (inName,inDescription,inAmount,now(),inTtype,inIdexpensetype,inIdprofile);
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE spUpdateExpensetype(
+    IN inId integer,     
+    IN inTitle VARCHAR(50),     
+    IN inValue integer
+) 
+BEGIN    
+
+UPDATE tbExpensetype
+SET 
+title = inTitle,
+value = inValue
+WHERE id = inId;
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE spUpdateTbProfile(   
+    IN inId integer,     
+    IN inName VARCHAR(50),     
+    IN inDescription VARCHAR(250),
+    IN inDayrange integer,     
+    IN inStartday date,     
+    IN inColor VARCHAR(50)
+
+) 
+BEGIN    
+
+UPDATE tbProfile
+SET 
+name = inName,
+description = inDescription,
+dayrange = inDayrange,
+startday = inStartday,
+color = inColor
+WHERE id = inId;
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE spUpdateTbUserdata(    
+    IN inId integer,      
+    IN inFirstName VARCHAR(50),     
+    IN inLastName VARCHAR(50),
+    IN inUsername VARCHAR(50),     
+    IN inPassword VARCHAR(50),     
+    IN inEmail VARCHAR(50),
+    IN inToken VARCHAR(50),     
+    IN inPicture blob  
+
+) 
+BEGIN    
+
+UPDATE tbUserdata
+SET 
+firstname = inFirstName,
+lastname = inLastName,
+username = inUsername,
+password = inPassword,
+email = inEmail,
+token = inToken,
+picture = inPicture
+WHERE id = inId;
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE spUpdateTbAdvice(  
+    IN inId integer,         
+    IN inTitle VARCHAR(50),     
+    IN inDescription VARCHAR(250),   
+    IN inPicture blob 
+
+) 
+BEGIN    
+
+UPDATE tbAdvice
+SET 
+title = inTitle,
+description = inDescription,
+picture = inPicture
+WHERE id = inId;
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE spUpdateTbTransaction(     
+    IN inName VARCHAR(50),     
+    IN inDescription VARCHAR(250),   
+    IN inAmount float,
+    IN inTtype integer,
+    IN inIdexpensetype integer,
+    In inIdprofile integer
+
+) 
+BEGIN   
+
+UPDATE tbTransaction
+SET 
+name = inName,
+description = inDescription,
+amount = inAmount,
+ttype = inTtype,
+idexpensetype = inIdexpensetype,
+idprofile = inIdprofile 
+WHERE id = inId;
 END //
 
 DELIMITER ;
