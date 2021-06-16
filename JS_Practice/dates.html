@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	</title>
+</head>
+<body>
+	<script>
+		
+
+var weekdates = []
+
+for (let i = 1; i < 8; i++) {
+  var currentmoment = new Date(
+    new Date().getTime() + 86400000 + -24 * i * 60 * 60 * 1000
+  )
+  var day = currentmoment.getDate()
+  if (day < 10) {
+    day = "0" + day
+  }
+  var month = currentmoment.getMonth() + 1
+  if (month < 10) {
+    month = "0" + month
+  }
+  var year = currentmoment.getFullYear()
+  weekdates[i] = day + "/" + month + "/" + year
+
+  	console.log(weekdates[i])
+
+  }
+
+	</script>
+
+</body>
+</html>
