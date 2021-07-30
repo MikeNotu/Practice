@@ -1,5 +1,4 @@
 <?php
-
 switch ($color) {
     case "red":
         echo "Hello";
