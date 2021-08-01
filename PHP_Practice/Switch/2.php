@@ -8,6 +8,5 @@ switch ($color) {
         break;
 
     default:
-
         echo "Neither";
 }
