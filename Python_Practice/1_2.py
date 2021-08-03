@@ -3,7 +3,6 @@ import numpy as np
 
 img = cv2.imread("chess.jpg")
 gris = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
 edges = cv2.Canny(gris, 75, 150)
 lines = cv2.HoughLinesP(edges, 1, np.pi/180, 30, maxLineGap=250)
 
