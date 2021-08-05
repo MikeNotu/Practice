@@ -1,6 +1,6 @@
-<!-- Insert the missing part of the code below to output "Hello World". -->
 
 <?php
-echo
-"Hello World";
+echo 
+date("l")
+;
 ?>
