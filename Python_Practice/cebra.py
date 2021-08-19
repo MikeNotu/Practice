@@ -3,7 +3,6 @@ import cv2
 from PIL import Image
 
 src = cv2.imread('cebra.jpg')
-
 edges = cv2.Canny(src,100,200,apertureSize = 3)
 minLineLength = 50
 maxLineGap = 5
