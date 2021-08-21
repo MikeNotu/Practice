@@ -5,7 +5,6 @@ public class Operaciones{
 		int num_uno = 8;
 		int num_dos = 4;
 		int resultado=0;
-
 		if(operacion==1){
 			resultado = num_uno+num_dos;
 			System.out.println("El resultado de la suma es: "+resultado);
