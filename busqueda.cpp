@@ -19,6 +19,7 @@ int main()
 	return 0;
 }//fin de main
 	
+	
 	void mostrarArreglo(const int arreglo[],int tamano)
 	{
 		for (int i = 0;i < tamano; i++)
