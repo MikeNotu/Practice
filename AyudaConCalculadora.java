@@ -19,7 +19,6 @@ public class Operaciones{
 			System.out.println("El resultado de la division es: "+resultado);
 		}else{
 			System.out.println("La opcion que elegiste no existe");
-
 		}
 	}
 }
