@@ -1,0 +1,62 @@
+https://stackoverflow.com/questions/41030361/how-to-update-react-context-from-inside-a-child-component
+
+Using hooks
+Hooks were introduced in 16.8.0 so the following code requires a minimum version of 16.8.0 (scroll down for the class components example). CodeSandbox Demo
+
+1. Setting parent state for dynamic context
+Firstly, in order to have a dynamic context which can be passed to the consumers, I'll use the parent's state. This ensures that I've a single source of truth going forth. For example, my parent App will look like this:
+
+const App = () => {
+  const [language, setLanguage] = useState("en");
+  const value = { language, setLanguage };
+
+  return (
+    ...
+  );
+};
+The language is stored in the state. We will pass both language and the setter function setLanguage via context later.
+
+2. Creating a context
+Next, I created a language context like this:
+
+// set the defaults
+const LanguageContext = React.createContext({
+  language: "en",
+  setLanguage: () => {}
+});
+Here I'm setting the defaults for language ('en') and a setLanguage function which will be sent by the context provider to the consumer(s). These are only defaults and I'll provide their values when using the provider component in the parent App.
+
+Note: the LanguageContext remains same whether you use hooks or class based components.
+
+3. Creating a context consumer
+In order to have the language switcher set the language, it should have the access to the language setter function via context. It can look something like this:
+
+const LanguageSwitcher = () => {
+  const { language, setLanguage } = useContext(LanguageContext);
+  return (
+    <button onClick={() => setLanguage("jp")}>
+      Switch Language (Current: {language})
+    </button>
+  );
+};
+Here I'm just setting the language to 'jp' but you may have your own logic to set languages for this.
+
+4. Wrapping the consumer in a provider
+Now I'll render my language switcher component in a LanguageContext.Provider and pass in the values which have to be sent via context to any level deeper. Here's how my parent App look like:
+
+const App = () => {
+  const [language, setLanguage] = useState("en");
+  const value = { language, setLanguage };
+
+  return (
+    <LanguageContext.Provider value={value}>
+      <h2>Current Language: {language}</h2>
+      <p>Click button to change to jp</p>
+      <div>
+        {/* Can be nested */}
+        <LanguageSwitcher />
+      </div>
+    </LanguageContext.Provider>
+  );
+};
+Now, whenever the language switcher is clicked it updates the context dynamically.
