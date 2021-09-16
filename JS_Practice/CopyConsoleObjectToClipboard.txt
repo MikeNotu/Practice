@@ -1,0 +1,3 @@
+Right-click an object in Chrome's console and select Store as Global Variable from the context menu. It will return something like temp1 as the variable name.
+
+Chrome also has a copy() method, so copy(temp1) in the console should copy that object to your clipboard.
